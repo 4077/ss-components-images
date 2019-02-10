@@ -1,0 +1,210 @@
+// head {
+@__nodeId__: ~"ss_components_images_cp__main";
+// }
+
+.@{__nodeId__} {
+    padding: 10px;
+
+    background-color: #FFFFFF;
+
+    .mode_button() {
+        cursor: pointer;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        color: #B0B0B0;
+        margin: 0 1px;
+
+        padding: 2px 5px;
+        border-radius: 3px;
+
+        &:hover {
+
+            &.html {
+                color: #FF0000;
+            }
+
+            &.js {
+                color: #FF00AA;
+            }
+        }
+
+        &.selected {
+
+            &.html {
+                background-color: #FF3C3C;
+                color: #FFFFFF;
+            }
+
+            &.js {
+                background-color: #A5006E;
+                color: #FFFFFF;
+            }
+
+            &:hover {
+
+                &.html {
+                    background-color: #FF6870;
+                }
+
+                &.js {
+                    background-color: #FF51CA;
+                }
+            }
+        }
+    }
+
+    .set_html_link_target_button {
+        .mode_button;
+
+        &:hover {
+            color: #FF0000;
+        }
+
+        &.selected {
+            background-color: #FF3C3C;
+            color: #FFFFFF;
+
+            &:hover {
+                background-color: #FF6870;
+            }
+        }
+    }
+
+    .toggle_js_link_button {
+        .mode_button;
+
+        &:hover {
+            color: #FF00AA;
+        }
+
+        &.selected {
+            background-color: #A5006E;
+            color: #FFFFFF;
+
+            &:hover {
+                background-color: #FF51CA;
+            }
+        }
+    }
+
+    .link_cp {
+        display: flex;
+        align-items: center;
+
+        margin-bottom: 10px;
+
+        .link_enabled_button {
+            cursor: pointer;
+            padding: 10px;
+            color: #909090;
+
+            display: flex;
+            align-items: center;
+
+            .icon {
+                color: #B0B0B0;
+                font-size: 30px;
+                margin-right: 10px;
+                transform: rotate(90deg);
+            }
+
+            .label {
+                margin: 0 5px;
+            }
+
+            &:hover {
+                color: #404040;
+
+                .icon {
+                    color: #404040;
+                }
+            }
+
+            &.enabled {
+                color: #606060;
+
+                .icon {
+                    color: #29BCFF;
+                }
+
+                &:hover {
+                    color: #909090;
+
+                    .icon {
+                        color: #6CCFFF;
+                    }
+                }
+            }
+
+            &:active {
+                position: relative;
+                left: 1px;
+                top: 1px;
+            }
+        }
+    }
+
+    .block {
+        display: flex;
+        border: 1px solid #E4E4E4;
+        border-radius: 5px;
+        margin: 5px;
+        background-color: #FBFBFB;
+
+        .content {
+            width: 100%;
+
+            .bar {
+                display: flex;
+                align-items: center;
+                height: 33px;
+
+                > .toggle_enabled_button {
+                    cursor: pointer;
+                    padding: 10px;
+                    color: #E70000;
+
+                    .icon {
+                        font-size: 14px;
+                        line-height: 13px;
+                    }
+
+                    &.enabled {
+                        color: #00AA00;
+                    }
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+
+                    &:active {
+                        position: relative;
+                        left: 1px;
+                        top: 1px;
+                    }
+                }
+
+                .label {
+                    color: #909090;
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        &.enabled {
+
+            .content {
+
+                .bar {
+
+                    .label {
+                        color: #303030;
+                    }
+                }
+            }
+        }
+    }
+}

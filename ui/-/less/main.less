@@ -1,0 +1,100 @@
+// head {
+@__nodeId__: ~"ss_components_images_ui__main";
+// }
+
+.@{__nodeId__} {
+
+    > .images {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        > .image {
+            cursor: pointer;
+            position: relative;
+            //margin: 10px;
+            display: flex;
+            justify-content: center;
+
+            padding: 5px;
+            box-sizing: border-box;
+
+            > .cp {
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                width: 100%;
+
+                display: flex;
+                justify-content: space-between;
+
+                z-index: 1;
+
+                .l {
+
+                }
+
+                .r {
+                    display: flex;
+                    padding: 5px;
+                    border-radius: 3px;
+
+                    background-color: rgba(255, 255, 255, 0.4);
+
+                    transition: all 0.3s;
+
+                    .not_published_mark {
+                        cursor: default;
+                        margin: 5px 15px 5px 5px;
+                        font-size: 23px;
+                        color: #FF0000;
+                    }
+
+                    .button {
+                        cursor: pointer;
+                        margin: 5px;
+                        font-size: 23px;
+                        color: rgba(0, 0, 0, 0.25);
+
+                        &:hover {
+                            color: #383838;
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+
+                > .cp {
+
+                    .r {
+                        background-color: rgba(255, 255, 255, 0.8);
+
+                        .button {
+                            color: rgba(0, 0, 0, 0.4);
+                        }
+                    }
+                }
+            }
+        }
+
+        //> .image {
+        //    width: 100%;
+        //    padding: 10px;
+        //}
+        //
+        //&[min-width~="500px"] {
+        //
+        //    > .image {
+        //        width: 50%;
+        //    }
+        //}
+        //
+        //&[min-width~="600px"] {
+        //
+        //    > .image {
+        //        width: 33%;
+        //    }
+        //}
+    }
+}

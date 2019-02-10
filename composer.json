@@ -1,0 +1,17 @@
+{
+    "name": "fed/ss-components-images",
+    "type": "ewma-module",
+    "description": "ss images component",
+    "authors": [
+        {
+            "name": "fed",
+            "email": "ewmafw@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "fed/ewma-module-installer-plugin": "~0.0.1",
+        "fed/std-images": "~0.1",
+        "fed/ss-components": "~0.1"
+    }
+}

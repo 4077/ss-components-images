@@ -1,0 +1,45 @@
+// head {
+@import "../../../../../../modules-vendor/fed/css/std/-/less/main.less";
+
+@__nodeId__: ~"ss_components_images_ui__main_image";
+// }
+
+.@{__nodeId__}[vmd5='@{vmd5}'] {
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: @imageWidth;
+    max-width: @imageWidth;
+
+    [block='image'] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        overflow: hidden;
+
+        height: @imageHeight;
+
+        //background-color: rgba(0, 0, 0, 0.1);
+
+        img {
+
+        }
+    }
+
+    [block='header'] {
+        margin: 10px 0;
+        font-size: 19px;
+        font-weight: bold;
+
+    }
+
+    [block='text'] {
+
+        p:first-child {
+            margin: 0;
+        }
+    }
+}
