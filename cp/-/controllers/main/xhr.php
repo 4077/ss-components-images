@@ -19,18 +19,18 @@ class Xhr extends \Controller
         if ($pivot = $this->unxpackModel('pivot')) {
             $target = $this->data('target');
 
-            $currentTarget = ss()->cats->apComponentPivotData($pivot, 'image/link/html_link_target');
+            $currentTarget = ss()->cats->apComponentPivotData($pivot, 'item/link/html_link_target');
 
             if ($currentTarget == $target) {
-                ss()->cats->apComponentPivotData($pivot, 'image/link/html_link_target', false);
+                ss()->cats->apComponentPivotData($pivot, 'item/link/html_link_target', false);
             } else {
-                ss()->cats->apComponentPivotData($pivot, 'image/link/html_link_target', $target);
+                ss()->cats->apComponentPivotData($pivot, 'item/link/html_link_target', $target);
             }
 
-            $targetJsLink = ss()->cats->apComponentPivotData($pivot, 'image/' . $target . '/js_link');
+            $targetJsLink = ss()->cats->apComponentPivotData($pivot, 'item/' . $target . '/js_link');
 
             if ($targetJsLink) {
-                ss()->cats->apComponentPivotData($pivot, 'image/' . $target . '/js_link', false);
+                ss()->cats->apComponentPivotData($pivot, 'item/' . $target . '/js_link', false);
             }
 
             $this->triggerUpdate($pivot->cat_id);
@@ -42,12 +42,12 @@ class Xhr extends \Controller
         if ($pivot = $this->unxpackModel('pivot')) {
             $type = $this->data('type');
 
-            $htmlLinkTarget = ss()->cats->apComponentPivotData($pivot, 'image/link/html_link_target');
+            $htmlLinkTarget = ss()->cats->apComponentPivotData($pivot, 'item/link/html_link_target');
 
-            ss()->cats->invertComponentPivotData($pivot, 'image/' . $type . '/js_link');
+            ss()->cats->invertComponentPivotData($pivot, 'item/' . $type . '/js_link');
 
             if ($htmlLinkTarget == $type) {
-                ss()->cats->apComponentPivotData($pivot, 'image/link/html_link_target', false);
+                ss()->cats->apComponentPivotData($pivot, 'item/link/html_link_target', false);
             }
 
             $this->triggerUpdate($pivot->cat_id);
@@ -57,7 +57,7 @@ class Xhr extends \Controller
     public function toggleLinkEnabled()
     {
         if ($pivot = $this->unxpackModel('pivot')) {
-            ss()->cats->invertComponentPivotData($pivot, 'image/link/enabled');
+            ss()->cats->invertComponentPivotData($pivot, 'item/link/enabled');
 
             $this->triggerUpdate($pivot->cat_id);
         }
@@ -68,7 +68,7 @@ class Xhr extends \Controller
         if ($pivot = $this->unxpackModel('pivot')) {
             $type = $this->data('type');
 
-            ss()->cats->apComponentPivotData($pivot, 'image/' . $type . '/enabled', $this->data('value'));
+            ss()->cats->apComponentPivotData($pivot, 'item/' . $type . '/enabled', $this->data('value'));
 
             $this->triggerUpdate($pivot->cat_id);
         }
@@ -78,7 +78,7 @@ class Xhr extends \Controller
     {
         if ($pivot = $this->unxpackModel('pivot')) {
             if ($sequence = $this->data('sequence')) {
-                ss()->cats->apComponentPivotData($pivot, 'image/order', implode($sequence));
+                ss()->cats->apComponentPivotData($pivot, 'item/order', implode($sequence));
 
                 $this->triggerUpdate($pivot->cat_id);
             }

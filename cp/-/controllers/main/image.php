@@ -91,8 +91,8 @@ class Image extends \Controller
                            'title'   => $imageData['auto_height'] ? 'Выключить' : 'Включить',
                            'content' => 'авто'
                        ]),
-                       'RESIZE_MODE'               => ss()->cats->apComponentPivotData($pivot, 'image/image/resize_mode'),
-                       'PREVENT_UPSIZE_ENABLED'    => ss()->cats->apComponentPivotData($pivot, 'image/image/prevent_upsize') ? 'enabled' : ''
+                       'RESIZE_MODE'               => ss()->cats->apComponentPivotData($pivot, 'item/image/resize_mode'),
+                       'PREVENT_UPSIZE_ENABLED'    => ss()->cats->apComponentPivotData($pivot, 'item/image/prevent_upsize') ? 'enabled' : ''
                    ]);
 
         $this->c('\std\ui button:bind', [
@@ -169,8 +169,8 @@ class Image extends \Controller
                             'dimension' => 'height'
                         ])
                     ]),
-                    'RESIZE_MODE'            => ss()->cats->apComponentPivotData($pivot, 'image/image/href/resize_mode'),
-                    'PREVENT_UPSIZE_ENABLED' => ss()->cats->apComponentPivotData($pivot, 'image/image/href/prevent_upsize') ? 'enabled' : ''
+                    'RESIZE_MODE'            => ss()->cats->apComponentPivotData($pivot, 'item/image/href/resize_mode'),
+                    'PREVENT_UPSIZE_ENABLED' => ss()->cats->apComponentPivotData($pivot, 'item/image/href/prevent_upsize') ? 'enabled' : ''
                 ]);
 
                 $this->c('\std\ui button:bind', [

@@ -21,7 +21,7 @@ class Xhr extends \Controller
             $dimension = $this->data('dimension');
 
             if (in($dimension, 'width, height')) {
-                ss()->cats->apComponentPivotData($pivot, 'image/image/' . $dimension, (int)$this->data('value'));
+                ss()->cats->apComponentPivotData($pivot, 'item/image/' . $dimension, (int)$this->data('value'));
 
                 $this->triggerUpdate($pivot->cat);
             }
@@ -34,7 +34,7 @@ class Xhr extends \Controller
             $dimension = $this->data('dimension');
 
             if (in($dimension, 'width, height')) {
-                ss()->cats->invertComponentPivotData($pivot, 'image/image/auto_' . $dimension);
+                ss()->cats->invertComponentPivotData($pivot, 'item/image/auto_' . $dimension);
 
                 $this->triggerUpdate($pivot->cat);
             }
@@ -44,9 +44,9 @@ class Xhr extends \Controller
     public function toggleOriginal()
     {
         if ($pivot = $this->unxpackModel('pivot')) {
-            $originalUsed = ss()->cats->apComponentPivotData($pivot, 'image/image/original');
+            $originalUsed = ss()->cats->apComponentPivotData($pivot, 'item/image/original');
 
-            ss()->cats->apComponentPivotData($pivot, 'image/image/original', !$originalUsed);
+            ss()->cats->apComponentPivotData($pivot, 'item/image/original', !$originalUsed);
 
             $this->triggerUpdate($pivot->cat);
         }
@@ -55,9 +55,9 @@ class Xhr extends \Controller
     public function togglePreventUpsize()
     {
         if ($pivot = $this->unxpackModel('pivot')) {
-            $preventUpsize = ss()->cats->apComponentPivotData($pivot, 'image/image/prevent_upsize');
+            $preventUpsize = ss()->cats->apComponentPivotData($pivot, 'item/image/prevent_upsize');
 
-            ss()->cats->apComponentPivotData($pivot, 'image/image/prevent_upsize', !$preventUpsize);
+            ss()->cats->apComponentPivotData($pivot, 'item/image/prevent_upsize', !$preventUpsize);
 
             $this->triggerUpdate($pivot->cat);
         }
@@ -66,7 +66,7 @@ class Xhr extends \Controller
     public function toggleResizeMode()
     {
         if ($pivot = $this->unxpackModel('pivot')) {
-            $currentMode = ss()->cats->apComponentPivotData($pivot, 'image/image/resize_mode');
+            $currentMode = ss()->cats->apComponentPivotData($pivot, 'item/image/resize_mode');
 
             if ($currentMode == 'fill') {
                 $setMode = 'fit';
@@ -74,7 +74,7 @@ class Xhr extends \Controller
                 $setMode = 'fill';
             }
 
-            ss()->cats->apComponentPivotData($pivot, 'image/image/resize_mode', $setMode);
+            ss()->cats->apComponentPivotData($pivot, 'item/image/resize_mode', $setMode);
 
             $this->triggerUpdate($pivot->cat);
         }
@@ -83,9 +83,9 @@ class Xhr extends \Controller
     public function toggleHrefEnabled()
     {
         if ($pivot = $this->unxpackModel('pivot')) {
-            $enabled = ss()->cats->apComponentPivotData($pivot, 'image/image/href/enabled');
+            $enabled = ss()->cats->apComponentPivotData($pivot, 'item/image/href/enabled');
 
-            ss()->cats->apComponentPivotData($pivot, 'image/image/href/enabled', !$enabled);
+            ss()->cats->apComponentPivotData($pivot, 'item/image/href/enabled', !$enabled);
 
             $this->triggerUpdate($pivot->cat);
         }
@@ -97,7 +97,7 @@ class Xhr extends \Controller
             $dimension = $this->data('dimension');
 
             if (in($dimension, 'width, height')) {
-                ss()->cats->apComponentPivotData($pivot, 'image/image/href/' . $dimension, (int)$this->data('value'));
+                ss()->cats->apComponentPivotData($pivot, 'item/image/href/' . $dimension, (int)$this->data('value'));
 
                 $this->triggerUpdate($pivot->cat);
             }
@@ -107,9 +107,9 @@ class Xhr extends \Controller
     public function toggleHrefOriginal()
     {
         if ($pivot = $this->unxpackModel('pivot')) {
-            $originalUsed = ss()->cats->apComponentPivotData($pivot, 'image/image/href/original');
+            $originalUsed = ss()->cats->apComponentPivotData($pivot, 'item/image/href/original');
 
-            ss()->cats->apComponentPivotData($pivot, 'image/image/href/original', !$originalUsed);
+            ss()->cats->apComponentPivotData($pivot, 'item/image/href/original', !$originalUsed);
 
             $this->triggerUpdate($pivot->cat);
         }
@@ -118,9 +118,9 @@ class Xhr extends \Controller
     public function toggleHrefPreventUpsize()
     {
         if ($pivot = $this->unxpackModel('pivot')) {
-            $preventUpsize = ss()->cats->apComponentPivotData($pivot, 'image/image/href/prevent_upsize');
+            $preventUpsize = ss()->cats->apComponentPivotData($pivot, 'item/image/href/prevent_upsize');
 
-            ss()->cats->apComponentPivotData($pivot, 'image/image/href/prevent_upsize', !$preventUpsize);
+            ss()->cats->apComponentPivotData($pivot, 'item/image/href/prevent_upsize', !$preventUpsize);
 
             $this->triggerUpdate($pivot->cat);
         }
@@ -129,7 +129,7 @@ class Xhr extends \Controller
     public function toggleHrefResizeMode()
     {
         if ($pivot = $this->unxpackModel('pivot')) {
-            $currentMode = ss()->cats->apComponentPivotData($pivot, 'image/image/href/resize_mode');
+            $currentMode = ss()->cats->apComponentPivotData($pivot, 'item/image/href/resize_mode');
 
             if ($currentMode == 'fill') {
                 $setMode = 'fit';
@@ -137,7 +137,7 @@ class Xhr extends \Controller
                 $setMode = 'fill';
             }
 
-            ss()->cats->apComponentPivotData($pivot, 'image/image/href/resize_mode', $setMode);
+            ss()->cats->apComponentPivotData($pivot, 'item/image/href/resize_mode', $setMode);
 
             $this->triggerUpdate($pivot->cat);
         }
