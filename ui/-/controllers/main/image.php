@@ -112,7 +112,8 @@ class Image extends \Controller
             if ($image) {
                 $versionModel = $image->versionModel;
 
-                $content = '<img src="' . abs_url($versionModel->file_path) . '" width="' . $versionModel->width . '" height="' . $versionModel->height . '" />';
+//                $content = '<img src="' . abs_url($versionModel->file_path) . '" width="' . $versionModel->width . '" height="' . $versionModel->height . '" />';
+                $content = '<img src="' . abs_url($versionModel->file_path) . '" />';
 
                 $content = $this->c('\std\ui tag:view', [
                     'attrs'   => [
